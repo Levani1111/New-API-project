@@ -1,6 +1,6 @@
-const mongoose = require('.connection')
-const data = require('./countries.json')
-const Country = require('../model/Country')
+const mongoose = require('.connection');
+const data = require('./countries.json');
+const Country = require('../model/Country');
 
 Country.deleteMany({}).then(() => {
     Country
