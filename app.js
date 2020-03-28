@@ -1,10 +1,11 @@
 const express = require('express');
-
+const cors = require('cors');
 const app = express();
+const countryRoutes = require ('./routes');
 
 const mongoose = require('mongoose')
 
-// middlewares
+
 const postsRoute = require('./routes/posts');
 
 app.use('/posts', postsRoute)
