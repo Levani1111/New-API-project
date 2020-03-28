@@ -5,17 +5,15 @@ const app = express();
 const mongoose = require('mongoose')
 
 // middlewares
+const postsRoute = require('./routes/posts');
 
-
+app.use('/posts', postsRoute)
 // Create Routes
 
 app.get('/', (req, res) =>{
     res.send('We are on home')
 });
 
-app.get('/posts', (req, res) => {
-  res.send("We are on posts");
-});
 
 // connect to database
 mongoose.connect('')
