@@ -6,13 +6,14 @@ let mongoURI = '';
 //mongoose.Promise = Promise
 
 if (process.env.NODE_ENV === 'production') {
-    mongoURI = process.env.DB_URL
+    mongoURI = process.env.DB_URL;
 } else {
-    mongoURI = 'mongodb://localhost/api-project'
+    mongoURI = "mongodb://localhost/New-API-project";
 }
 
 mongoose.connect(mongoURI, {
-        useNewUrlParser : true})
+        useNewUrlParser : true,
+        useFindAndModify: false })
   //      .then( feedback => console.log('connected') )
   //      .catch( err => console.log('connection failed', err))
 
