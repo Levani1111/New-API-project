@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const mongoURL = "mongodb://localhost/8080";
+//const mongoURL = "mongodb://localhost/8080";
 let mongoURI = '';
 
 mongoose.Promise = Promise
@@ -8,7 +8,7 @@ mongoose.Promise = Promise
 if (process.env.NODE_ENV === 'production') {
     mongoURI = process.env.DB_URL;
 } else {
-    mongoURI = "mongodb://localhost:8080/";
+    mongoURI = "mongodb://localhost/New-API-project";
 }
 
 mongoose.connect(mongoURI, { useNewUrlParser: true })
