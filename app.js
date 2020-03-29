@@ -23,7 +23,7 @@ app.route('/create').post(function (req, res) {
 });
 
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
   Country.find({}).then(place => {
     res.json(place);
   });
