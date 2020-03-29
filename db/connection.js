@@ -8,7 +8,7 @@ let mongoURI = '';
 if (process.env.NODE_ENV === 'production') {
     mongoURI = process.env.DB_URL;
 } else {
-    mongoURI = "mongodb://localhost/New-API-project";
+    mongoURI = "mongodb://localhost/8080";
 }
 
 mongoose.connect(mongoURI, {
