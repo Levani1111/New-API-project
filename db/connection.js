@@ -1,22 +1,20 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-//const mongoURL = "mongodb://localhost/8080";
-let mongoURI = '';
+mongoose.Promise = Promise;
 
-mongoose.Promise = Promise
+let mongoURI = "";
 
-if (process.env.NODE_ENV === 'production') {
-    mongoURI = process.env.DB_URL;
+if (process.env.NODE_ENV === "production") {
+  mongoURI = process.env.DB_URL;
 } else {
-    mongoURI = "mongodb://localhost/New-API-project";
+  mongoURI = "mongodb://localhost/New-API-project";
 }
 
-mongoose.connect(mongoURI, { useNewUrlParser: true })
-  .then(instance =>
-    console.log(`Connected to db: ${instance.connections[0].name}`)
-  )
-  .catch(error => console.log("Connection failed!", error));
-
-console.log(mongoose.connection.readyState); 
+mongoose
+  .connect(mongoURI, { useNewUrlParser: true, useFindAndModify: false })
+  .then(instance => {
+    console.log(`Connected to db: ${instance.connections[0].name}`);
+  })
+  .catch(err => console.log("connection failed", err));
 
 module.exports = mongoose;
