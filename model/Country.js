@@ -1,5 +1,6 @@
-const mongoose = require("../db/connection");
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
+
 const CountrySchema = new Schema({
   name: String,
   capital: String,
