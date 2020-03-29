@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.Promise = Promise;
+//mongoose.Promise = Promise;
 
 
 let mongoURI = "";
