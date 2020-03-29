@@ -24,7 +24,7 @@ app.route('/create').post(function (req, res) {
 
 
 
-app.delete("/delete/:_id", function(req, res) {
+app.delete("/remove/:_id", function(req, res) {
   Country.findByIdAndDelete(req.params.id).then(place => {
     res.json(place);
   });
