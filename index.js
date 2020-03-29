@@ -23,6 +23,15 @@ app.route('/create').post(function (req, res) {
 });
 
 
+
+app.delete("/delete/:_id", function(req, res) {
+  Country.findByIdAndDelete(req.params.id).then(place => {
+    res.json(place);
+  });
+});
+
+
+
 app.get("/", (req, res) => {
   Country.find({}).then(place => {
     res.json(place);
