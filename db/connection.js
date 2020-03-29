@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 mongoose.Promise = Promise;
 
 
-//let mongoURI = "";
-//if (process.env.NODE_ENV === "production") {
-//  mongoURI = process.env.DB_URL;
-//} else {
-mongoURI = "mongodb://127.0.0.1:55294/New-API-project";
-//}
+let mongoURI = "";
+    if (process.env.NODE_ENV === "production") {
+        mongoURI = process.env.DB_URL;
+} else {
+    mongoURI = "mongodb://localhost/New-API-project";
+}
 
 
 mongoose
