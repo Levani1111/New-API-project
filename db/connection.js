@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 //const mongoURL = "mongodb://localhost/8080";
 let mongoURI = '';
 
-//mongoose.Promise = Promise
+mongoose.Promise = Promise
 
 if (process.env.NODE_ENV === 'production') {
     mongoURI = process.env.DB_URL;
@@ -16,5 +16,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true })
     console.log(`Connected to db: ${instance.connections[0].name}`)
   )
   .catch(error => console.log("Connection failed!", error));
+
+console.log(mongoose.connection.readyState); 
 
 module.exports = mongoose;
