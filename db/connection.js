@@ -10,7 +10,7 @@ let mongoURI = "";
 if (process.env.NODE_ENV === "production") {
   mongoURI = process.env.DB_URL;
 } else {
-  mongoURI = "mongodb://localhost/New-API-project";
+  mongoURI = "mongodb://127.0.0.1:55294/New-API-project";
 }
 
 // connect to the database, with the imported mongoose instance
