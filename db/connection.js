@@ -7,7 +7,7 @@ let mongoURI = "";
 
 
 if (process.env.NODE_ENV === "production") {
-        mongoURI = process.env.DB_URL;
+        mongoURI = string(process.env.DB_URL);
 } else {
     mongoURI = "mongodb://localhost/New-API-project";
 }
