@@ -21,7 +21,7 @@ base url: https://thawing-fjord-63020.herokuapp.com/
 | GET    |   /name/{name}    | Show a country by its name                    |
 | GET    | /capital/{capital}| Show a country by its capital                 |
 | GET    |   /_id/{_id}      | Show a country by its ID                      |
-| DELETE |    /remove/:id    | Delete a country by its ID                    |
+| DELETE |    /remove/{_id}  | Delete a country by its ID                    |
 
 
 # Output
