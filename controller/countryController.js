@@ -1,4 +1,4 @@
-const Country = require ('..model/Country')
+const Country = require ('../model/Country')
 
 module.exports = {
     index: (req, res) => {

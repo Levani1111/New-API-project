@@ -7,11 +7,11 @@ const Country = require('./model/Country')
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/' countryRoutes)
+app.use('/', countryRoutes)
 
 // Create a new country
 
-countryRoutes.route('/create').post(function (req, res) {
+app.route('/create').post(function (req, res) {
   const country = new Country(req.body);
   country.save()
     .then(place => {
@@ -23,5 +23,36 @@ countryRoutes.route('/create').post(function (req, res) {
 });
 
 
-// connect to the server
-app.listen(3000);
+app.get("/", (req, res) => {
+  Country.find({}).then(place => {
+    res.json(place);
+  });
+});
+
+
+app.get('/name/:name', (req, res) => {
+  Country.find({ name: req.params.name }).then(place => {
+    res.json(place);
+  });
+});
+
+app.get('/capital/:capital', (req, res) => {
+    Country.find({ capital: req.params.capital}).then(place => {
+        res.json(place);
+    });
+});
+
+app.get("/_id/:_id", (req, res) => {
+  Country.find({ _id: req.params._id }).then(place => {
+    res.json(place);
+  });
+});
+
+//app.get("/")
+
+
+app.set("port", process.env.PORT || 8080);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
