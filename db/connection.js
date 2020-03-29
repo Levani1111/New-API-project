@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//mongoose.Promise = Promise;
+mongoose.Promise = Promise;
 
 
 let mongoURI = "";
@@ -9,11 +9,11 @@ let mongoURI = "";
 if (process.env.NODE_ENV === "production") {
         mongoURI = process.env.DB_URL;
 } else {
-    mongoURI = "mongodb://localhost/New-API-project";
+    mongoURI = "mongodb://localhost/";
 }
 
 
-mongoose.connect(mongoURI, { useNewUrlParser: true });
+mongoose.connect(mongoURI, { useNewUrlParser: true, dbName: 'my-db' });
 //  .then(instance =>
 //    console.log(`Connected to db: ${instance.connections[0].name}`)
 //  )
