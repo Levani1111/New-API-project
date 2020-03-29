@@ -6,13 +6,13 @@ mongoose.Promise = Promise;
 let mongoURI = "";
 
 
-///if (process.env.NODE_ENV === "production") {
-///        mongoURI = process.env.DB_URL;
-///} else {
-///    mongoURI = "mongodb://localhost/country";
-///}
+if (process.env.NODE_ENV === "production") {
+        mongoURI = process.env.DATABASE_URL;
+} else {
+    mongoURI = "mongodb://localhost/country";
+}
 
-mongoURI = process.env.DB_URL;
+
 
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 
