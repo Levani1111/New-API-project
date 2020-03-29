@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 //const mongoURL = "mongodb://localhost/apiproject";
-let mongoURI = ''
+let mongoURI = '';
 
 //mongoose.Promise = Promise
 
@@ -16,4 +16,4 @@ mongoose.connect(mongoURI, {
   //      .then( feedback => console.log('connected') )
   //      .catch( err => console.log('connection failed', err))
 
-module.exports = mongoose
+module.exports = mongoose;
