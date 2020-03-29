@@ -1,22 +1,18 @@
 const mongoose = require("mongoose");
-const dotenv = require('dotenv');
-dotenv.config()
 
 mongoose.Promise = Promise;
 
-let mongoURI = "";
-
-if (process.env.NODE_ENV === "production") {
-  mongoURI = process.env.DB_URL;
+if (process.env.NODE_ENV == "production") {
+  mongoose.connect(process.env.DB_URL);
 } else {
-  mongoURI = "mongodb://localhost/New-API-project";
+  mongoose
+    .connect("mongodb://localhost/countries", { useNewUrlParser: true })
+    .then(conn => {
+      console.log(`connected to mongodb on ${conn.connections[0].name} db`);
+    })
+    .catch(err => {
+      console.error(err);
+    });
 }
-
-mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useFindAndModify: false })
-  .then(instance => {
-    console.log(`Connected to db: ${instance.connections[0].name}`);
-  })
-  .catch(err => console.log("connection failed", err));
 
 module.exports = mongoose;
